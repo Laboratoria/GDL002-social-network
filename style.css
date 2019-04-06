@@ -1,4 +1,4 @@
-.flex-user{
+flex-user{
     display: flex;
     flex-flow: column wrap;
     align-content: center;
@@ -17,11 +17,11 @@
     justify-content: center;
 }
 
-#each-post {
+.each-post {
     display: flex;
     flex-flow: column wrap;
     align-content: center;
     border: 1px black solid;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }

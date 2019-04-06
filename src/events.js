@@ -48,23 +48,19 @@ function wallEvents() {
 
 //Ejecuta boton publicar
 const form = document.querySelector('#submit-post');
-const datePublished = '18 de abril';
+const datePublished = new Date().toLocaleDateString();
 const btnPublish = document.querySelector('#publish');
+const actualUser = firebase.auth().currentUser.email;
+form.comment.value = '';
 
-  btnPublish.addEventListener('submit', (e) => {
+  btnPublish.addEventListener('click', (e) => {
     e.preventDefault();
     db.collection("post").add({
-      comment: form.comment.value
+      comment: form.comment.value,
+      user: actualUser,
+      date: datePublished
     })
-    .then(function(docRef) {
-      console.log("Document written with ID: ", docRef.id);
-    })
-    .catch(function(error) {
-      console.error("Error adding document: ", error);
-    });
   })
-  
-  form.comment.value = '';
 
 
 //Publica los post
@@ -72,27 +68,62 @@ const btnPublish = document.querySelector('#publish');
 const postList = document.querySelector('#post-list');
 
 function createPost(doc){
-  let div = document.createElement('div');
-  let comment = document.createElement('div');
-  let date = document.createElement('div');
-  
-  div.setAttribute('data-id', doc.id);
-  div.setAttribute('id', 'each-post')
-  comment.textContent = doc.data().comment;
+  let section = document.createElement('section');
+  let header = document.createElement('header');
+  let user2 = document.createElement('span');
+  let date = document.createElement('span');
+  let divComment = document.createElement('div');
+  let headerComment = document.createElement('div');
+  let edit = document.createElement('button');
+  let exit = document.createElement('button');
+  let comment = document.createElement('p');
+
+  section.setAttribute('data-id', doc.id);
+  section.setAttribute('class', 'each-post')
+
+  user2.textContent = doc.data().user;
   date.textContent = doc.data().date;
+  edit.textContent = "edit";
+  exit.textContent = "x";
+  comment.textContent = doc.data().comment;
 
-  div.appendChild(comment);
-  div.appendChild(date);
+  section.appendChild(header)
+  header.appendChild(user2);
+  header.appendChild(date);
+  section.appendChild(divComment);
+  divComment.appendChild(headerComment);
+  headerComment.appendChild(edit);
+  headerComment.appendChild(exit);
+  divComment.appendChild(comment);
+  postList.appendChild(section);
 
-  postList.appendChild(div);
+  //Borrar data
+  exit.addEventListener('click', (e) => {
+    e.stopPropagation();
+    let id = e.target.parentElement.parentElement.parentElement.getAttribute('data-id');
+    db.collection('post').doc(id).delete();
+  })
 }
 
-const db = firebase.firestore();
-db.collection("post").get().then((querySnapshot) => {
-  querySnapshot.forEach((doc) => {
-  createPost(doc);
-  });
-});
+// db.collection("post").orderBy('date').get().then((querySnapshot) => {
+//   querySnapshot.forEach((doc) => {
+//   createPost(doc);
+//   });
+// });
+
+//Escuha en tiempo real
+db.collection("post").orderBy('date').onSnapshot(snapshot => {
+  let changes = snapshot.docChanges();
+  changes.forEach(change => {
+    if (change.type == 'added') {
+      createPost(change.doc);
+    } else if (change.type == 'removed') {
+      let li = postList.querySelector('[data-id=' + change.doc.id + ']');
+      postList.removeChild(li);
+    }
+  })
+})
+
 }
 
 export default {
