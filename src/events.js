@@ -129,4 +129,4 @@ db.collection("post").orderBy('date').onSnapshot(snapshot => {
 export default {
   homeEvents,
   wallEvents
-}
+} 

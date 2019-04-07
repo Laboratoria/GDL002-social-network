@@ -8,6 +8,35 @@ flex-user{
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
+    padding-bottom: 20%;
+    padding-top: 0%;
+}
+.logInWindow, .registerWindow {
+    width: 50%; 
+    align-content: center;
+    padding: 05%;
+    border-style: solid;
+    border-radius: 05px;
+    border-color: silver;
+    
+}
+body {
+    background-image: url("/src/Imagenes/backgroundhOJAS.jpeg");
+}
+
+.content {
+    
+    padding-bottom: 20%;
+    /* padding-top: 08%; */
+    background-color: rgba(250,250,250,0.6);
+    border-color: rgba(250,250,250,0.7);
+    width: 30%;
+    margin-left: 35%;
+    margin-bottom: 40%;
+    margin-top: 10%;
+    border-radius: 15px 15px 15px 15px;
+    opacity: initial;
+    align-content: center;
 }
 
 #submit-post {
