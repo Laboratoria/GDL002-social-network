@@ -1,0 +1,22 @@
+{
+  "name": "gdl002-social-network",
+  "version": "1.0.0",
+  "description": "social-network",
+  "main": " ",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nathalis/GDL002-social-network.git"
+  },
+  "author": "Maribel y Nathalie",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nathalis/GDL002-social-network/issues"
+  },
+  "homepage": "https://github.com/Nathalis/GDL002-social-network#readme",
+  "devDependencies": {
+    "jest": "^24.7.1"
+  }
+}

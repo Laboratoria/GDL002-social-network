@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Paws</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Fuentes de Google Fonts -->
+    <!-- <link href="https//fonts.googleapis.com/css?family=Lobster:400" rel="stylesheet" type="text/css">  -->
+    %MINIFYHTML20ee431543976a78f61829a1cea682086%
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <!-- Fin Fuentes de Google Fonts -->
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/3.5.2/firebase-ui-auth.css" />
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="index.css">
+    <script>
+        < link rel = "stylesheet"
+        type = "text/css"
+        media = "screen"
+        href = "style.css" >
+
+            <
+            script >
+
+            (function() {
+                var redirect = sessionStorage.redirect;
+                delete sessionStorage.redirect;
+                if (redirect && redirect != location.href) {
+                    history.replaceState(null, null, redirect);
+                }
+            })();
+    </script>
+</head>
+
+<body>
+    <header class="firstHeader">
+        <div>
+            <img alt="home" src="./images/home.png" class="btnHome homeBtn typeButton" data-next="goWelcomePage">
+            <h2>Paws</h2>
+        </div>
+    </header>
+    <main>
+
+        <section class="secondHeader">
+            <input type="checkbox" class="checkbox" id="menu-toogle" />
+            <label for="menu-toogle" class="menu-toogle"></label>
+            <nav class="nav">
+                <a href="#" class="nav__item current">Mi perfil</a>
+                <a href="#" class="nav__item btnLogOut">Cerrar sesión</a>
+            </nav>
+            <h1>Paws</h1>
+        </section>
+
+        <div id="firstContent">
+
+        </div>
+        <div id="secondContent"></div>
+
+        <footer class="firstFooter">
+            <a href="#" class="pageInformation">
+                <p>¿Quiénes Somos?</p>
+            </a>
+        </footer>
+        <div id="img"></div>
+        <div id="adoptImg"></div>
+        <!-- publicaciones 
+
+<section class = "profile">
+  <label>Nombre</label>
+  <input  type = "text" class = " userName ">
+  <label>Apellido</label>
+  <input type = "text"class = " userLastName">
+  <label>Edad</label>
+  <input type = "text" class = "ageUser">
+  <button class= "btnSave">Actualizar</button>
+</section>
+-->
+    </main>
+    <section class="secondFooter">
+        <button> <img alt= "home" src="./images/home.png" class=" typeButton SecondHomeBtn" data-next = "homePage" id = "homePage"></button>
+        <button> <img alt = "Lost Pets" class="typeButton lostBtn" id ="showLostPet" data-next = "showLostPet"  src="./images/lost.png" ></button>
+        <button> <img alt = "Adoption Pets" class="typeButton adoptBtn" src="./images/adopt.png" id = "showAdoptionPets" data-next ="showAdoptionPets" ></button>
+        <button> <img alt ="Help" class="typeButton helpBtn" id = "showHelp" data-next = "showHelp" src="./images/help.png" ></button>
+    </section>
+
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
+    <!-- final publicaciones -->
+    <script src="https://www.gstatic.com/firebasejs/5.7.1/firebase-app.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g=" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="firebaseApp.js"></script>
+    <script src="firebaseFunctions.js"></script>
+    <script src="index.js"></script>
+    <script src=user.js></script>
+    <script src="post.js"></script>
+    <script src="pages.js"></script>
+    <script src="router.js"></script>
+    <script src="buttonsAddEventListeners.js"></script>
+
+</body>
+
+
+</html>
+
+</html>

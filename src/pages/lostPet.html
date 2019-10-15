@@ -1,0 +1,47 @@
+<div class="lostForm">
+    <b>Mascota extraviada</b></th>
+    </tr>
+    <p>Compartir con </p>
+    <select class="shareLost">
+                <option value="friends">Amigos</option>
+                <option value="public">Público</option>
+        </select>
+
+    <form>
+        <table>
+            <!-- border: 1 width="500" -->
+
+            <!-- align: center -->
+            <h6>Selecciona la foto de tu mascota</h6>
+            <input type="file" value="upload" id="fileButton" />
+            <tr>
+                <td Colspan="6"><input class="name" type="text" placeholder="Nombre" required/></td>
+            </tr>
+            <tr>
+                <td Colspan="6"><input class="date" type="text" placeholder="Visto por última vez lugar/fecha" required/></td>
+            </tr>
+            <tr>
+                <td Colspan="6"><input class="description" type="text" placeholder="Descripción,talla, raza y/o color" required/></td>
+            </tr>
+            <tr>
+                <td Colspan="6"><input class="details" type="text" placeholder="Especifica si traía accesorios: placa/collar/ropa" required /></td>
+            </tr>
+            <tr>
+                <td Colspan="6"><input class="features" type="text" placeholder="Señas particulares" required/></td>
+            </tr>
+            <tr>
+                <td colspan="6"><input class="contact" type="text" placeholder="Contacto (nombre & cel)" required/></td>
+                <tr>
+
+        </table>
+    </form>
+    <button type="submit" class="typeButton saveBtn" data-next="savePost" id="savePost">Guardar</button>
+</div>
+
+
+<section class="lostPets">
+    <h1>Extraviados</h1>
+
+    <button class="postForm typeButton" id="lostForm" data-next="lostForm">Publicar</button>
+    <div class="printInfo"></div>
+</section>
