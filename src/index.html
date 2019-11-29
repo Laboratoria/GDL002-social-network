@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <title>Poogle</title>
+
+        <!---------- Styles CSS---------->
+
+        <link
+            rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+            integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" type="text/css" href="styles/main.css" />
+        <link rel="stylesheet" type="text/css" href="styles/homescreen.css" />
+        <link rel="stylesheet" type="text/css" href="styles/card.css" />
+        <link rel="stylesheet" type="text/css" href="styles/reviews-rate.css" />
+        <link rel="stylesheet" type="text/css" href="styles/register.css" />
+        <link rel="stylesheet" type="text/css" href="styles/userlogin.css" />
+        <link rel="stylesheet" type="text/css" href="styles/faq.css" />
+        <link rel="stylesheet" type="text/css" href="styles/suggestscreen.css" />
+        <link rel="stylesheet" type="text/css" href="styles/devices.css" />
+    </head>
+
+    <header>
+        <!-------- Nav bar  ------->
+        <button class="headerelements btnmenu" id="btnmenu">
+            <i class="fas fa-bars"></i>
+        </button>
+        <input id="searchbar" class="headerelements" placeholder="Busca aquí lo que necesites" />
+        <div id="btnsearch" class="headerelements"><i class="fas fa-search"></i></div>
+        <!----- Sidenav dropdown  ----->
+        <div id="sidenavMenu" class="sidenav">
+            <a href="javascript:void(0)" class="menuCloseBtn" id="menuCloseBtn"> &times; </a>
+            <button data-target="homescreen" class="navlink sidenavItem">Inicio</button>
+            <button
+                data-target="homescreen"
+                class="navlink sidenavItem dropdown-btn"
+                id="dropdownBtn"
+            >
+                Categorías
+                <i class="fas fa-caret-down"></i>
+            </button>
+
+            <div class="dropdown-container" id="menuDropdown">
+                <button id="subhealth" data-category="health" class="subm">Salud</button>
+                <button id="subaccommodation" data-category="accommodation" class="subm">
+                    Alojamiento
+                </button>
+                <button id="subpetfriendly" data-category="petfriendly" class="subm">
+                    Lugares PetFriendly
+                </button>
+                <button id="subshopping" data-category="shopping" class="subm">
+                    Autoservicios
+                </button>
+                <button id="subeducation" data-category="education" class="subm">
+                    Educación
+                </button>
+                <button id="subnonprofit" data-category="nonprofit" class="subm">
+                    Protectoras De Animales
+                </button>
+            </div>
+            <button data-target="faqscreen" class="navlink sidenavItem">FAQ</button>
+            <button data-target="suggestscreen" class="navlink sidenavItem" id="suggestPlace">
+                Sugiere un lugar
+            </button>
+            <button class="sidenavItem" id="logOut">Cerrar Sesión</button>
+        </div>
+    </header>
+
+    <body>
+        <main>
+            <!---------- Home screen---------->
+            <div class="page" id="homescreen">
+                <!------- Slideshow -------->
+                <div id="mainimg">
+                    <figure>
+                        <img src="images/assets/slideshowCat.jpg" />
+                        <img src="images/assets/slideshowDog.jpg" />
+                        <img src="images/assets/slideshowRabbit.jpg" />
+                        <!-- <img src="https://image.freepik.com/free-photo/studio-shot-cute-border-collie-dog_23-2148097523.jpg"> -->
+                        <img src="images/assets/slideshowCat.jpg" />
+                    </figure>
+                </div>
+
+                <!------ Category icons ------>
+
+                <section id="categories">
+                    <div id="health" data-category="health">
+                        <img class="categoryimg" src="images/icons/009-red-cross.svg" />
+                    </div>
+
+                    <div id="accommodation" data-category="accommodation">
+                        <img class="categoryimg" src="images/icons/006-dog-house.svg" />
+                    </div>
+
+                    <div id="petfriendly" data-category="petfriendly">
+                        <img class="categoryimg" src="images/icons/007-pet.svg" />
+                    </div>
+
+                    <div id="shopping" data-category="shopping">
+                        <img class="categoryimg" src="images/icons/013-pet-shop.svg" />
+                    </div>
+
+                    <div id="education" data-category="education">
+                        <img class="categoryimg" src="images/icons/011-graduation-cap.svg" />
+                    </div>
+
+                    <div id="nonprofit" data-category="nonprofit">
+                        <img class="categoryimg" src="images/icons/012-paw.svg" />
+                    </div>
+                </section>
+
+                <section id="feed">
+                    <div id="reviewcontainer"></div>
+                </section>
+            </div>
+
+            <!---------- User registry screen---------->
+
+            <div class="page active" id="register">
+                <div id="registerimg">
+                    <!-- <img class="registerimage" src="images/assets/Introduction.jpg" /> -->
+                    <article>
+                        <img class="logo" src="images/assets/PoogleLogo.png" />
+                    </article>
+                    <p>
+                        Comenta, califica e interactúa con otros pet-parents para encontrar los
+                        mejores servicios para tu mascota.
+                    </p>
+                </div>
+                <input id="username" placeholder="Elige un nombre de usuario" />
+
+                <div id="emailandpassword">
+                    <input id="email" type="email" placeholder="Ingresa tu e-mail" class="e-mail" />
+                    <input
+                        id="password"
+                        type="password"
+                        placeholder="Crea tu contraseña con al menos 6 caractéres"
+                        class="e-mail"
+                    />
+                </div>
+
+                <button id="createuserbtn" class="register">¡Registrate!</button>
+
+                <div id="registeredusers">
+                    <div id="textregister">¿Ya tienes una cuenta?</div>
+                    <div id="registerbtn">
+                        <button data-target="userloginscreen" class="navlink">Inicia sesión</button>
+                    </div>
+                </div>
+
+                <div id="ortext">o regístrate con:</div>
+                <button id="facebookregister">FACEBOOK</button>
+                <button id="googleregister">GOOGLE</button>
+            </div>
+
+            <!---------- Login screen---------->
+
+            <div class="page" id="userloginscreen">
+                <div id="loginimage"></div>
+
+                <div id="continuewith">
+                    <button id="continuefacebook">continua con FACEBOOK</button>
+                    <button id="continuegoogle">continua con GOOGLE</button>
+                    <button id="continueemail">continua con tu correo</button>
+                    <div id="toregisterscreen">¿Aún no tienes cuenta? ¡Registrate!</div>
+                </div>
+
+                <div id="useremailandpassword">
+                    <input
+                        id="useremail"
+                        type="email"
+                        placeholder="Ingresa tu e-mail"
+                        class="e-mail"
+                    />
+                    <div id="useremailerror"></div>
+                    <input
+                        id="userpassword"
+                        type="password"
+                        placeholder="Ingresa tu contraseña"
+                        class="e-mail"
+                    />
+                    <div id="userpassworderror"></div>
+                    <button id="emailloginbtn">INICIA SESIÓN</button>
+                    <div id="forgotpassword">¿Olvidaste tu contraseña?</div>
+                    <div id="toregisterscreen">¿Aún no tienes cuenta? ¡Registrate!</div>
+                </div>
+
+                <div id="useragreement">
+                    Al iniciar sesión estarás de acuerdo con nuestras políticas de privacidad.
+                </div>
+            </div>
+
+            <!---------- FAQ screen---------->
+
+            <div class="page" id="faqscreen">
+                <div id="faqimage"><img src="images/assets/bannerFAQMob1.jpg" /></div>
+                <div id="faqtitle">Es normal tener dudas, permítenos responderlas</div>
+
+                <div class="faqcontainer" id="faqtext">
+                    <h1>¿Qué es Póogle?</h1>
+                    <p>
+                        Poogle es la nueva plataforma para pet-parents que les permite ubicar
+                        servicios verificados para mascotas. Cada establecimiento cuenta con toda la
+                        información necesaria para permitirle a los pet-parents elegir el más
+                        confiable.
+                    </p>
+
+                    <h1>¿Por qué Servicios verificados?</h1>
+                    <p>
+                        Usualmente pasan dos cosas cuando buscamos servicios para mascotas: La
+                        información que encontramos es insuficiente, incorrecta o no sabemos si la
+                        persona responsable está calificada para el servicio que presta y eso nos
+                        pone muchos obstáculos para brindarle el mejor cuidado a nuestras mascotas.
+                        <br /><br />
+                        En Poogle queremos cambiar esto, así que nos aseguramos de verificar la
+                        información de los establecimientos y las credenciales de lxs responsables
+                        para brindar una herramienta confiable: La opinion de otrxs pet-parents e
+                        información verídica del servicio.
+                    </p>
+                    <h1>¿Qué puedes hacer con Poogle?</h1>
+                    <p>
+                        <ul>
+                            <li>Buscar y filtrar establecimientos por categoría</li>
+                            <li>Visualizar información y servicios que ofrece el establecimiento</li>
+                            <li>Visualizar opiniones de otros pet-parents</li>
+                            <li>Opinar sobre los establecimientos </li>
+                        </ul>
+                    </p>
+                    <h1>Un establecimiento que conozco no está aquí.</h1>
+                    <p>
+                        Ve al menú lateral ☰ y elige la pestaña "Sugiere un lugar". Llena el formulario y en cuanto verifiquemos el establecimiento, lo pondremos en la página. ¡Muchas gracias por tu aportación!
+                    </p>
+                    <h1>Si tienes una duda que no hayamos respondido, contáctanos en pooglenetwork@gmail.com </h1>
+                </div>
+            </div>
+
+            <!---------- Suggest a place screen---------->
+
+            <div class="page" id="suggestscreen">
+                <div id="suggestscreentitle"><img src="images/assets/bannerSuggestMob.jpg" /></div>
+                <div id="suggestscreentext">
+                    Para sugerir que aparezca un establecimiento en nuestro listado, por favor
+                    completa la información a continuación y el equipo de Poogle se encargará de
+                    verificar el establecimiento a la brevedad.
+                </div>
+
+                <div id="suggestscreenname">Nombre:</div>
+                <input
+                    id="suggestname"
+                    type="text"
+                    class="suggestitems"
+                    placeholder="Nombre del lugar que sugieres"
+                />
+
+                <div id="suggestscreencategory">Categoría:</div>
+                <input
+                    id="suggestcategory"
+                    type="text"
+                    class="suggestitems"
+                    placeholder="Salud/Alojamiento/Lugares Pet Friendly/Tiendas de autoservicio/Educación/Protectoras de animales"
+                />
+
+                <div id="suggestscreenwebsite">Website:</div>
+                <input
+                    id="suggestwebsite"
+                    type="text"
+                    class="suggestitems"
+                    placeholder="O url de su página de Facebook..."
+                />
+
+                <div id="suggestscreenaddress">Dirección:</div>
+                <input
+                    id="suggestaddress"
+                    type="text"
+                    class="suggestitems"
+                    placeholder="Calle - número - colonia - código postal"
+                />
+
+                <div id="suggestscreentelephone">Teléfono:</div>
+                <input
+                    id="suggesttelephone"
+                    type="text"
+                    class="suggestitems"
+                    placeholder="+ 52 (--- --- ----)"
+                />
+
+                <div id="suggestscreenschedule">Horario de atención:</div>
+                <input
+                    id="suggestschedule"
+                    type="text"
+                    class="suggestitems"
+                    placeholder="L-V 8:00 AM - 8:00 PM"
+                />
+
+                <div id="suggestscreenperks">Servicios que ofrece:</div>
+                <input
+                    id="suggestperks"
+                    type="text"
+                    class="suggestitems"
+                    placeholder="Rayos X, Transporte, Estética"
+                />
+
+                <button id="submitsuggestion">ENVIAR SUGERENCIA</button>
+            </div>
+        </main>
+
+        <!------------- JS SCRIPTS------------->
+
+        <!-- Firebase App is always required and must be first -->
+        <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-app.js"></script>
+
+        <!-- Add additional services that you want to use -->
+        <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-firestore.js"></script>
+        <script src="data/services.js"></script>
+        <script src="javascript/ConfigFireB.js"></script>
+        <script src="javascript/fireBase.js"></script>
+        <script src="javascript/firestore.js"></script>
+
+        <script src="javascript/main.js"></script>
+    </body>
+</html>

@@ -1,0 +1,169 @@
+#register {
+    grid-area: content;
+    grid-template-columns: 1rem 1fr 1rem;
+    grid-template-rows: 1rem auto 0.5rem 3rem 0.5rem 10rem 3rem 0.5rem 2rem 2rem 3rem 0.5rem 3rem;
+    grid-template-areas: ". . ."". registerimage ."". . ."". username ."". . ."". emailandpassword ." ". createuserbtn ."". . ."". registeredusers ."". ortext ."". facebookregister ."". . ." " . googleregister .";
+    background-image: url("https://i.imgur.com/iLgyfJg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: center;
+}
+
+.logo {
+    height: 8rem;
+    object-fit: contain;
+}
+
+#registerimg {
+    grid-area: registerimage;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(87, 75, 98, 0.5);
+    border-radius: 1rem;
+}
+
+#registerimg p {
+    margin: 5%;
+}
+
+.registerimage {
+    grid-area: registerimage;
+    display: block;
+    max-width: 100%;
+    height: auto;
+    width: 100%;
+    object-fit: cover;
+}
+
+#registerimg p {
+    color: whitesmoke;
+    font-size: 16pt;
+    font-weight: 500;
+    text-align: center;
+}
+
+/* img {
+    width: 100%;
+    object-fit: cover;
+    visibility: hidden;
+} */
+
+#username {
+    grid-area: username;
+    display: flex;
+    padding: 0.25rem;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    border-bottom-width: 0.3rem;
+    border-bottom-color: rgba(190, 33, 108, 1);
+    background: none;
+    /* border-radius: 0.25rem; */
+}
+
+#emailandpassword {
+    grid-area: emailandpassword;
+    display: grid;
+    grid-template-rows: 3rem 0.5rem 3rem 0.5rem;
+    grid-template-areas: "email"".""password"".";
+}
+
+#email {
+    grid-area: email;
+    display: flex;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    border-bottom-width: 0.3rem;
+    border-color: rgba(190, 33, 108, 1);
+    background: none;
+    /* border-radius: 0.25rem; */
+}
+
+#password {
+    grid-area: password;
+    display: flex;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    border-bottom-width: 0.3rem;
+    border-color: rgba(190, 33, 108, 1);
+    background: none;
+    /* border-radius: 0.25rem; */
+}
+
+#createuserbtn {
+    grid-area: createuserbtn;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(193, 217, 58, 1);
+    border: none;
+    border-radius: 2rem;
+    cursor: pointer;
+}
+
+#registeredusers {
+    grid-area: registeredusers;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "textregister registerbtn";
+}
+
+#textregister {
+    grid-area: textregister;
+    display: flex;
+    padding: 0.25rem;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+#registerbtn {
+    color: white;
+    grid-area: registerbtn;
+    display: flex;
+    padding: 0.25rem;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color: rgba(225, 155, 56, 1);
+    border-radius: 1rem;
+}
+
+#registerbtn button {
+    border: none;
+    background: none;
+}
+
+#ortext {
+    grid-area: ortext;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#facebookregister {
+    grid-area: facebookregister;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(59, 89, 152, 1);
+    border: none;
+    border-radius: 2rem;
+    color: white;
+    cursor: pointer;
+}
+
+#googleregister {
+    grid-area: googleregister;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 2rem;
+    cursor: pointer;
+    background-color: rgba(219, 68, 55, 1);
+    color: white;
+}

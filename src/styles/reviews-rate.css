@@ -1,0 +1,98 @@
+#rateform {
+    display: none;
+    grid-template-columns: 1rem auto 1rem;
+    grid-template-rows: 1rem 3rem 2rem auto 4rem 3rem 1rem;
+    grid-row-gap: 0.5rem;
+    grid-template-areas:
+    ". . ."
+    ". ratetitle ."
+    ". opiniontitle ."
+    ". opinion ."
+    ". veracitycheck ."
+    ". btnsubmit ."
+    ". . .";
+    border-top: solid 1px;
+}
+
+#ratetitle {
+    grid-area: ratetitle;
+    display: flex;
+    padding: 0.25rem;
+}
+
+#opiniontitle {
+    grid-area: opiniontitle;
+    display: flex;
+    padding: 0.25rem;
+}
+
+#opinion {
+    grid-area: opinion;
+    display: flex;
+    padding: 0.5rem;
+    align-items: center;
+    justify-content: center;
+}
+
+#opinion::placeholder {
+    padding: 0.5rem;
+}
+
+#veracitycheck {
+    grid-area: veracitycheck;
+    display: flex;
+    padding: 0.25rem;
+    align-items: center;
+}
+
+#btnsubmit {
+    grid-area: btnsubmit;
+    display: flex;
+    padding: 0.25rem;
+    align-items: center;
+    justify-content: center;
+    background-color:rgb(210, 226, 228);
+    border-radius: 0.15rem;
+}
+
+#reviewcontainer {
+    grid-area: ratesandreviews;
+    display: none;
+}
+
+#singlereview {
+    display: grid;
+    grid-template-columns:1rem auto 3rem 3rem ;
+    grid-template-rows: 1rem 2rem auto 0.5rem;
+    grid-template-areas:
+        ". . btnedit btndelete"
+        ". authorinfo . ."
+        ". writtenreview . ."
+        ". . . .";
+}
+
+#btnedit {
+    grid-area: btnedit;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0.15rem;
+}
+
+#btndelete {
+    grid-area: btndelete;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.15rem;
+}
+
+#authorinfo {
+    grid-area: authorinfo;
+    display: flex;
+}
+
+#writtenreview {
+    grid-area: writtenreview;
+    display: flex;
+}
