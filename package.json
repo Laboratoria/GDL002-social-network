@@ -1,0 +1,30 @@
+{
+  "name": "gdl002-social-network",
+  "version": "1.0.0",
+  "description": "Instagram, Snapchat, Twitter, Facebook, Twitch, Linkedin, etc. Las redes\r sociales han invadido nuestras vidas. Las amamos y/u odiamos, y muchos no podemos vivir sin ellas.",
+  "main": "index.js",
+  "homepage": "https://angieeca06.github.io/GDL002-social-network/src/",
+  "dependencies": {
+    "deploy": "^1.0.3",
+    "firebase-admin": "^7.2.0",
+    "gh-pages": "^2.0.1"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^0.1.6",
+    "mocha": "^6.0.2"
+  },
+  "scripts": {
+    "test": "mocha --reporter spec",
+    "predeploy": "npm build",
+    "deploy": "gh-pages -d build -b master"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git + https://angieeca06.github.io/GDL002-social-network/"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://angieeca06.github.io/GDL002-social-network/src/"
+  }
+}
